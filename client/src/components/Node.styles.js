@@ -14,7 +14,7 @@ export const Node = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: gray
+  background-color: gray;
 `
 
 export const NodeFirst = styled.div`
@@ -42,4 +42,22 @@ export const NodeVisited = styled.div`
   width: 100%;
   height: 100%;
   background-color: yellow;
+`
+
+export const NodePath = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+`
+
+export const Wall = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
 `
