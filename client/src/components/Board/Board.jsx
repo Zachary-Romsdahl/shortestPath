@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Node from './Node.jsx';
+import Node from '../Node/Node.jsx';
 import * as S from './Board.styles.js';
-import { dijsktra } from '../dijsktra.js';
+import { dijsktra } from '../../dijsktra.js';
 
 const Board = ({ node, findPath, reset, wallMode, setFindPath }) => {
   const [numRows, setNumRows] = useState(20);
@@ -39,8 +39,7 @@ const Board = ({ node, findPath, reset, wallMode, setFindPath }) => {
       for (let i = 0; i < shortestPath.length; i++) {
         await handleAnimateDelay(shortestPath[i], handleAnimateShortestPath);
       }
-      setAnimationInProgress(false)
-      console.log('animation', animationInProgress)
+      setAnimationInProgress(false);
     }
 
     if (findPath) {
@@ -51,7 +50,6 @@ const Board = ({ node, findPath, reset, wallMode, setFindPath }) => {
           if (oldBoard[i][j] === 3 || oldBoard[i][j] === 4) oldBoard[i][j] = 0;
         }
       }
-      console.table(oldBoard);
       setBoard(oldBoard);
       handleAnimateSearch();
     }
@@ -97,7 +95,6 @@ const Board = ({ node, findPath, reset, wallMode, setFindPath }) => {
   const handleNodeClick = (e) => {
     const { id } = e.target;
     const loc = JSON.parse(id);
-    console.log('an',animationInProgress)
     if (wallMode || animationInProgress) return;
     if (node === 1) {
       const oldBoard = [];

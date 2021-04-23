@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Board from './components/Board.jsx';
+import Board from './components/Board/Board.jsx';
 import * as S from './App.styles.js';
 
 const App = () => {
@@ -11,7 +11,6 @@ const App = () => {
 
   const handleButtonNodeClick = (e) => {
     const { id } = e.target;
-    console.log(id);
     if (id === 'first-button') {
       setNode(1);
     } else if (id === 'second-button') {
